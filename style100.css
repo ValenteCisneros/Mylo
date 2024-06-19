@@ -1,0 +1,26 @@
+body{
+    background: url("img/background.png");
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+
+
+.mylo{
+    color: #f1ff40cc;
+}
+.space {
+    color: #f1ff40cc;
+    text-align: center;
+    padding-left: 80px;
+    white-space: nowrap;
+  }
+
+.space3 {
+  color: #f1ff40cc;
+  text-align: center;
+  padding-left: 20px;
+  white-space: nowrap;
+}

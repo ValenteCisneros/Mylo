@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <img width=100px src="img/mylologo.png" alt="MYLO">
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="MILO3.php">Busqueda De Similares</a></li>
+            <li><a href="MILO2.html">Calidad Y Veracidad</a></li>
+            <li><a href="MILO.html">AI Analysis</a></li>
+          </ul>
+        </nav>
+    </header>
+    
+    <section>
+        <table>
+            <tr>
+                <td>
+                    <h2 data-animate="true">Gemini</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container2">
+                        <h1>Checkeo de veracidad y calidad con Gemini</h1>
+                        <textarea id="inputText" placeholder="Escribe algo aquí..." rows="10"></textarea>
+                        <button id="generateButton">Comprueba</button>
+                        <div class="response" id="responseText"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        const API_KEY = 'AIzaSyCPUJzfh8h4MDpZmp0GBiLPlPP7upHf5aM';
+        const genAI = new GoogleGenerativeAI(API_KEY);
+
+        document.getElementById('generateButton').addEventListener('click', async () => {
+            const inputTexto = document.getElementById('inputText').value;
+            const prompt = `Verifica la veracidad y calidad del siguiente texto: ${inputTexto}`;
+
+            const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
+
+            try {
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const generatedText = response.text();
+                document.getElementById('responseText').innerText = generatedText;
+                //document.getElementById('edenaiText').value = generatedText; // Asignar al textarea de EdenAI si es necesario
+            } catch (error) {
+                console.error('Error al generar contenido:', error);
+                document.getElementById('responseText').innerText = 'Error al generar contenido.';
+            }
+        });
+    </script>
+    <div id="cursor" class="cursor">
+        <div class="ring">
+          <div>
+            <!--Border-->
+          </div>
+        </div>
+        <div class="ring">
+          <div>
+            <!--Pointer-->
+          </div>
+        </div>
+      </div>
+      <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+        <script src="./script.js"></script>
+</body>
+</html>

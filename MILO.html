@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <img width= 100px src="img/mylologo.png" alt="MYLO">
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="MILO3.php">Busqueda De Similares</a></li>
+            <li><a href="MILO2.html">Calidad Y Veracidad</a></li>
+            <li><a href="MILO.html">AI Analysis</a></li>
+          </ul>
+        </nav>
+      </header>
+<section id="eden">
+<table  width = 90%>
+  <tr class="container2">
+        <td><h2 data-animate="true">EdenAI</h2></td>
+  </tr>
+  <tr>  
+    <td class="container2">
+        <h1>interacción con Eden AI para medir el porcentaje del contenido creado por IA</h1>
+        <form method="post" action="procesar_edenai.php">
+            <textarea name="text" id="edenaiText" placeholder="Introduce el texto aquí" rows="10"></textarea>
+            <input type="hidden" name="providers" value="originalityai">
+            <input type="hidden" name="language" value="en">
+            <button type="submit">Enviar a EdenAI</button>
+        </form>
+    </td>
+</tr>  
+</table>
+</section>
+<div id="cursor" class="cursor">
+    <div class="ring">
+      <div>
+        <!--Border-->
+      </div>
+    </div>
+    <div class="ring">
+      <div>
+        <!--Pointer-->
+      </div>
+    </div>
+  </div>
+  <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script><script  src="./script.js"></script>
+</body>
+</html>

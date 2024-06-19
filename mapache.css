@@ -1,0 +1,250 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.raccoon {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.head {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #808080;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ear {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #808080;
+    border-radius: 50%;
+    border: 5px solid #aaa;
+}
+
+.ear.left {
+    left: -20px;
+    top: 10px;
+    transform: rotate(-30deg);
+}
+
+.ear.right {
+    right: -20px;
+    top: 10px;
+    transform: rotate(30deg);
+}
+
+.face {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eye {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.eye.left {
+    left: 30px;
+    top: 50px;
+}
+
+.eye.right {
+    right: 30px;
+    top: 50px;
+}
+
+.pupil {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+.nose {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 90px;
+    left: 85px;
+}
+
+.mask {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 60px;
+    left: 40px;
+}
+
+.whiskers {
+    position: absolute;
+    width: 80px;
+    height: 10px;
+    background-color: #000;
+    top: 120px;
+    border-radius: 0 0 5px 5px;
+}
+
+.whiskers.left {
+    left: 40px;
+    transform: rotate(30deg);
+}
+
+.whiskers.right {
+    right: 40px;
+    transform: rotate(-30deg);
+}
+
+.body {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background-color: #808080;
+    border-radius: 50% 50% 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.arm {
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.arm.left {
+    left: -40px;
+    top: 100px;
+    transform: rotate(20deg);
+    animation: swingLeft 2s infinite alternate;
+}
+
+.arm.right {
+    right: -40px;
+    top: 100px;
+    transform: rotate(-20deg);
+    animation: swingRight 2s infinite alternate;
+}
+
+.leg {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    background-color: #888;
+    border-radius: 10px;
+    bottom: 0;
+}
+
+.leg.left {
+    left: 40px;
+    background-color: #888;
+    transform: rotate(10deg);
+    animation: moveLeftLeg 1s infinite alternate;
+}
+
+.leg.right {
+    right: 40px;
+    background-color: #888;
+    transform: rotate(-10deg);
+    animation: moveRightLeg 1s infinite alternate;
+}
+
+.tail {
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    background-color: #666;
+    border-radius: 50%;
+    top: 230px;
+    left: -20px;
+    animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes swingLeft {
+    0% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes swingRight {
+    0% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes moveLeftLeg {
+    0%, 100% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes moveRightLeg {
+    0%, 100% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+}
